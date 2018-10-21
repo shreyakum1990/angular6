@@ -1,0 +1,61 @@
+<h1>The Basics</h1>
+
+<p>Example : I' am in the Appcomponent </p>
+<hr>
+<h2>Components</h2>
+<app-server></app-server>
+<h2>Understanding the Role of AppModule and Component Declaration</h2>
+<h2>Creating Component with the cli nesting component</h2>
+<app-servers></app-servers>
+<h2>Working with Component Styles</h2>
+<div class="app-servers"></div>
+<h2>What is Databinding?</h2>
+
+Communication between typescript code and template html.<br>
+<span><b>syntax : </b>String Interpolation </span> <!--{{data}}--><br>
+<span><b>syntax : </b>Property Binding </span> <!--[property]="data"--><br>
+<span><b>synatx : </b>Event Binding </span> <!--(event)="expression"--><br>
+<span><b>syntax : </b>Combination of Both: Two-way data binding </span> <!--[(ngModel)]="data"-->
+
+<h2>String Interpolation</h2>
+<p>{{'server'}} with  ID {{serverId}} is {{getServerStatus()}}</p>
+<br>
+<h2>Property Binding</h2>
+<p>
+    <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+</p>
+<p [innerText]="allowNewServer"></p>
+<br>
+<h2>Event Binding</h2>
+<button (click)="onCreateServer()" class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<p>{{serverCreationStatus}}</p>
+<br>
+<h2>Passing and Using Data with Event Binding</h2>
+<label>Server Name</label>
+<input class="form-control" (input)="onUpdateServerName($event)">
+<p>{{ serverName }}</p>
+<br>
+<h2>Two way Data binding</h2>
+<input class="form-control" [(ngModel)]="serverName">
+<br>
+<h2>Understanding Directives</h2>
+<h4>What is directives?</h4>
+<p>Directives are Instructions in the DOM!</p>
+<p appTurnGreen>Receives a green backgrounds!</p>
+<!-- @Directive({
+    selector:'[appTurnGreen]'
+}) 
+    export class TurnGreenDirective{
+        ...
+    }
+-->
+<br>
+<h2>Using ngIf to Output Data Conditionally</h2>
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+<br>
+<h2>Enhancing ngIf with an Else Condition</h2>
+<ng-template #noServer>
+    <p>
+        No server was created!
+    </p>
+</ng-template>
