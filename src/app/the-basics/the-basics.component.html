@@ -59,3 +59,8 @@ Communication between typescript code and template html.<br>
         No server was created!
     </p>
 </ng-template>
+<hr>
+<h2>Styling elements dynamically with ngStyle</h2>
+<p>Unlike structural directives, attribute directives don't add or remove elements. They only change the element they were placed on.</p>
+<p [ngStyle]="{backgroundColor: getColor()}">{{'server'}} with  ID {{serverId}} is {{getServerStatus()}}</p>
+<p [ngStyle]="{backgroundColor: getColor()}">{{'server'}} with  ID {{serverId}} is {{getServerStatus()}}</p>

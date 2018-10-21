@@ -18,6 +18,8 @@ export class TheBasicsComponent implements OnInit {
     setTimeout(()=>{
       this.allowNewServer = true;
     },2000);
+
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
    }
 
   ngOnInit() {
@@ -35,6 +37,10 @@ export class TheBasicsComponent implements OnInit {
   onUpdateServerName(event:Event){
     // console.log(event)
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  getColor(){
+    return this.serverStatus === 'online' ? 'green' : 'red';
   }
 
 }
