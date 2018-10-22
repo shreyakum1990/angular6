@@ -11,6 +11,7 @@ import { TheBasicsComponent } from './the-basics/the-basics.component';
 import { TheBasicsCopntComponent } from './the-basics-copnt/the-basics-copnt.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
+import { TheCourseBasicsComponent } from './the-course-basics/the-course-basics.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ServersComponent } from './servers/servers.component';
     TheBasicsComponent,
     TheBasicsCopntComponent,
     ServerComponent,
-    ServersComponent
+    ServersComponent,
+    TheCourseBasicsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { ServersComponent } from './servers/servers.component';
       { path : '', component : IntroAnguar7Component },
       { path : 'course', component : CourseComponent },
       { path : 'the-basics', component : TheBasicsComponent },
-      { path : 'components', component : TheBasicsCopntComponent }
+      { path : 'components', component : TheBasicsCopntComponent },
+      { path : 'Course Project - The Basics', component : TheCourseBasicsComponent}
     ])
   ],
   providers: [],
